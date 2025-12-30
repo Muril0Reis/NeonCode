@@ -12,37 +12,17 @@ export default function Gallery() {
     {
       name: 'Murilo Reis',
       image: 'https://media.istockphoto.com/id/1175673630/pt/vetorial/nerd-face-emoji-clever-emoticon-with-glasses-geek-or-student.jpg?s=612x612&w=0&k=20&c=wiPDE0VUjGI1K3QUyvN2I1aQxT3PbxK7VArjE9mJwlM=',
-      description: 'Técnico em eletroeletrônica, Tecnólogo em análise e desenvolvimento de sistemas. Desenvolve aplicações FullStack Web/Mobile JS e programa microcontroladores. Entusiasta de Cybersegurança.',
+      description: 'FullStack Developer | Cybersecurity Enthusiast',
     },
     {
       name: 'Henry Oliveira',
       image: 'https://media.istockphoto.com/id/1175673630/pt/vetorial/nerd-face-emoji-clever-emoticon-with-glasses-geek-or-student.jpg?s=612x612&w=0&k=20&c=wiPDE0VUjGI1K3QUyvN2I1aQxT3PbxK7VArjE9mJwlM=',
-      description: 'Técnico em eletroeletrônica, Tecnólogo em análise e desenvolvimento de sistemas e Bacharel em Ciência de Dados. Desenvolve aplicações FullStack Web/Mobile/Desktop, programa microcontroladores e faz análises de dados.',
+      description: 'FullStack Developer | Data Scientist',
     },
   ]
 
   return (
     <section id="gallery" ref={ref} className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-[#0a0a0a] dark:via-[#1a0a1a] dark:to-[#0a0a0a]">
-      <style>{`
-        @keyframes shimmer {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
-        }
-        .shimmer {
-          animation: shimmer 2s infinite;
-          background: linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.3) 50%,
-            rgba(255, 255, 255, 0) 100%
-          );
-          background-size: 1000px 100%;
-        }
-      `}</style>
       
       <div className="container mx-auto px-4">
         <motion.div
@@ -67,24 +47,24 @@ export default function Gallery() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="flex flex-col w-full lg:w-80 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 dark:shadow-[#3b0354]/20 bg-white dark:bg-[#1a0a2e]"
+              className="group relative flex flex-col w-full lg:w-80 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:translate-x-2 transition-all duration-500 dark:shadow-[#3b0354]/20 bg-white dark:bg-[#1a0a2e] border border-gray-200 dark:border-purple-900/30"
             >
-              {/* Imagem com efeito shimmer e slide */}
-              <div className="relative w-full h-64 overflow-hidden group bg-gray-200 dark:bg-gray-800">
+              {/* Imagem */}
+              <div className="relative w-full h-64 overflow-hidden bg-gray-200 dark:bg-gray-800">
                 <img
                   src={dev.image}
                   alt={dev.name}
-                  className="w-full h-full object-cover group-hover:translate-x-2 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="shimmer absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
               </div>
 
               {/* Conteúdo do Card */}
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+              <div className="p-6 flex flex-col">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   {dev.name}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-grow">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   {dev.description}
                 </p>
               </div>
