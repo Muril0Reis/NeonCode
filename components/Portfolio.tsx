@@ -109,7 +109,7 @@ export default function Portfolio() {
             Portfólio
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto mb-8" />
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Projetos que transformaram negócios e impulsionaram resultados
           </p>
         </motion.div>
@@ -133,9 +133,7 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
-                {/* Overlay gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/90 via-indigo-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                {/* Overlay adicional para melhor contraste */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <div className="absolute top-4 right-4 z-10">
                   <span className="px-3 py-1 bg-gradient-to-r from-indigo-500 to-pink-500 text-white text-sm font-semibold rounded-full shadow-lg">
@@ -153,7 +151,7 @@ export default function Portfolio() {
                     </span>
                   </h3>
                 </div>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                   {project.description}
                 </p>
               </div>
@@ -165,15 +163,13 @@ export default function Portfolio() {
                   exit={{ opacity: 0, height: 0 }}
                   className="px-6 pb-6"
                 >
-                  <div className="pt-4 border-t border-gray-200">
-                    <h4 className="text-lg font-bold text-gray-800 mb-4">
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">
-                        Sobre o Projeto
-                      </span>
+                  <div className="pt-4 border-t border-gray-200 dark:border-white/10">
+                    <h4 className="text-lg font-bold text-gray-800 dark:text-white mb-4">
+                      Sobre o Projeto
                     </h4>
                     <ul className="space-y-2">
                       {project.details?.map((detail, idx) => (
-                        <li key={idx} className="flex items-start text-gray-700">
+                        <li key={idx} className="flex items-start text-gray-700 dark:text-gray-200">
                           <svg className="w-5 h-5 text-pink-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>
@@ -191,4 +187,3 @@ export default function Portfolio() {
     </section>
   )
 }
-

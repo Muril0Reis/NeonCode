@@ -35,7 +35,7 @@ export default function Gallery() {
             Desenvolvedores
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto mb-8" />
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg font-bold text-gray-800 dark:text-white mb-4-auto">
             Conheça os profissionais que tornam seus projetos realidade
           </p>
         </motion.div>

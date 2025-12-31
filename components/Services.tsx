@@ -54,7 +54,7 @@ export default function Services() {
             Nossos Serviços
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto mb-8" />
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Soluções completas para transformar sua empresa digitalmente
           </p>
         </motion.div>
@@ -87,13 +87,13 @@ export default function Services() {
                 </span>
               </h3>
               
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-gray-700">
+                  <li key={feature} className="flex items-center text-gray-700 dark:text-gray-200">
                     <svg className="w-5 h-5 text-pink-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
@@ -116,4 +116,3 @@ export default function Services() {
     </section>
   )
 }
-

@@ -62,7 +62,7 @@ export default function Header() {
                     href={item.href}
                     className={`transition-colors font-medium ${
                       scrolled
-                        ? 'text-gray-700 hover:text-pink-500'
+                        ? 'text-gray-700 dark:text-white hover:text-pink-500'
                         : 'text-white hover:text-pink-300'
                     }`}
                   >
@@ -76,7 +76,7 @@ export default function Header() {
                   whileHover={{ scale: 1.1 }}
                   className={`transition-colors font-medium ${
                     scrolled
-                      ? 'text-gray-700 hover:text-pink-500'
+                      ? 'text-gray-700 dark:text-white hover:text-pink-500'
                       : 'text-white hover:text-pink-300'
                   }`}
                 >
@@ -90,7 +90,7 @@ export default function Header() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? 'hover:bg-gray-100 text-gray-700' : 'hover:bg-white/10 text-white'
+              scrolled ? 'hover:bg-gray-100 text-gray-700 dark:text-white' : 'hover:bg-white/10 text-white'
             }`}
             aria-label="Toggle menu"
           >
@@ -123,40 +123,21 @@ export default function Header() {
                 !scrolled ? 'bg-black/20 backdrop-blur-sm rounded-lg px-4' : ''
               }`}
             >
-              {navItems.map((item) =>
-                item.isLink ? (
-                  <motion.div
-                    key={item.name}
-                    onClick={() => setIsOpen(false)}
-                    whileHover={{ x: 10 }}
-                  >
-                    <Link
-                      href={item.href}
-                      className={`block transition-colors font-medium ${
-                        scrolled
-                          ? 'text-gray-700 hover:text-pink-500'
-                          : 'text-white hover:text-pink-300'
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  </motion.div>
-                ) : (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    whileHover={{ x: 10 }}
-                    className={`block transition-colors font-medium ${
-                      scrolled
-                        ? 'text-gray-700 hover:text-pink-500'
-                        : 'text-white hover:text-pink-300'
-                    }`}
-                  >
-                    {item.name}
-                  </motion.a>
-                )
-              )}
+              {navItems.map((item) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  whileHover={{ x: 10 }}
+                  className={`block transition-colors font-medium ${
+                    scrolled
+                      ? 'text-gray-700 dark:text-white hover:text-pink-500'
+                      : 'text-white hover:text-pink-300'
+                  }`}
+                >
+                  {item.name}
+                </motion.a>
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
@@ -164,4 +145,3 @@ export default function Header() {
     </motion.header>
   )
 }
-

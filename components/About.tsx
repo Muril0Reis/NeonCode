@@ -68,14 +68,14 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <p className="text-lg text-gray-700 leading-relaxed mb-4">
+          <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
             A <strong className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">NeonCode Solutions</strong> é uma software house especializada
             em transformar ideias em soluções tecnológicas de alto impacto. Com anos
             de experiência no mercado, desenvolvemos software personalizado, plataformas
             SaaS escaláveis e sistemas ERP completos que impulsionam o crescimento
             empresarial.
           </p>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
             Nossa equipe multidisciplinar combina expertise técnica com visão de negócios,
             garantindo que cada projeto não apenas atenda às necessidades atuais, mas
             também esteja preparado para o futuro. Trabalhamos com metodologias ágeis,
@@ -105,7 +105,7 @@ export default function About() {
                   {value.title}
                 </span>
               </h3>
-              <p className="text-gray-600">{value.description}</p>
+              <p className="dark:text-gray-300">{value.description}</p>
             </motion.div>
           ))}
         </div>
